@@ -1,0 +1,48 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gerador de Foto - Alexandre Isquierdo</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="arte">
+
+<img id="foto" src="">
+
+<img src="moldura.png" id="moldura">
+
+</div>
+
+<div class="acoes">
+
+<input
+type="file"
+id="upload"
+accept="image/*">
+
+<button id="download">
+
+Baixar imagem
+
+</button>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+```
