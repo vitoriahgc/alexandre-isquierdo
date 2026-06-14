@@ -1,47 +1,44 @@
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
+```javascript
+const upload = document.getElementById("upload");
+const foto = document.getElementById("foto");
+const download = document.getElementById("download");
+const arte = document.getElementById("arte");
 
-<head>
+// Escolher foto
+upload.onchange = function(){
 
-<meta charset="UTF-8">
+    const arquivo = this.files[0];
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    if(!arquivo) return;
 
-<title>Monte sua foto de apoio</title>
+    foto.src = URL.createObjectURL(arquivo);
 
-<link rel="stylesheet" href="style.css">
+};
 
-</head>
+// Baixar imagem
+download.onclick = function(){
 
-<body>
+    html2canvas(arte,{
 
-<main>
+        scale:2,
 
-<div class="preview" id="arte">
+        useCORS:true
 
-<img id="foto" src="" alt="Sua foto">
+    }).then(function(canvas){
 
-<img id="moldura" src="moldura.png" alt="Moldura">
+        const a = document.createElement("a");
 
-</div>
+        a.href = canvas.toDataURL("image/png");
 
-<div class="painel">
+        a.download = "alexandre-isquierdo.png";
 
-<input
-type="file"
-id="upload"
-accept="image/png,image/jpeg,image/jpg,image/webp">
+        document.body.appendChild(a);
 
-<button type="button" id="download">
+        a.click();
 
-Baixar imagem
+        document.body.removeChild(a);
 
-</button>
+    });
 
-</div>
-
-</main>
-
-<script src="
+};
 ```
